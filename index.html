@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Watch Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-white h-screen">
+    <!-- Product Section -->
+    <div class="container mx-auto py-10">
+      <div class="flex items-center max-h-[720px] justify-center gap-[60px]">
+        <!-- Thumbnail -->
+        <div id="thumbnailContainer">
+          <img
+            id="thumbnail"
+            src="./images/blue.png"
+            alt="Product Thumbnail"
+            class="w-[630px] h-auto rounded-[4px]"
+          />
+        </div>
+
+        <!-- Product Details -->
+        <div>
+          <h1 class="text-[40px] font-[700] text-[#364A63] mb-3">
+            Classy Modern Smart Watch
+          </h1>
+          <!-- review  -->
+          <div class="flex items-center gap-[4.5px]">
+            <div class="flex items-center">
+              <img src="./images/review/star-1.png" alt="review star" />
+              <img src="./images/review/star-1.png" alt="review star" />
+              <img src="./images/review/star-1.png" alt="review star" />
+            </div>
+            <img src="./images/review/star-2.png" alt="review star" />
+            <img src="./images/review/star-3.png" alt="review star" />
+            <div class="ml-2">
+              <p class="text-[#8091A7]">(2 Reviews)</p>
+            </div>
+          </div>
+          <div class="text-gray-600 mb-4 pt-4">
+            <span class="line-through text-[20px] text-[#8091A7]">$99.00</span>
+            <span class="text-[#6576FF] text-[24px] font-bold">$79.00</span>
+          </div>
+          <p class="mb-4 text-[18px] text-[#8091A7] leading-relaxed">
+            I must explain to you how all this mistaken idea of denoun cing ple
+            praising pain was born and I will give you a complete account of the
+            system, and <br />
+            expound the actual teaching.
+          </p>
+
+          <!-- type  -->
+          <div class="flex gap-[43px] items-center">
+            <div>
+              <p class="text-[#8091A7]">Type</p>
+              <h1 class="text-[#364A63] font-bold text-[16px]">Watch</h1>
+            </div>
+            <div>
+              <p class="text-[#8091A7]">Model Number</p>
+              <h1 class="text-[#364A63] font-bold text-[16px]">
+                Forerunner 290XT
+              </h1>
+            </div>
+          </div>
+
+          <!-- Band Color -->
+          <div class="mb-4 pt-[20px]">
+            <p class="font-bold text-[#364A63] text-[18px]">Band Color</p>
+            <div class="flex space-x-4 mt-2">
+              <!-- Purple -->
+              <div
+                class="color-option w-6 h-6 rounded-full flex items-center justify-center"
+                onclick="changeThumbnail('purple', 'border-[#816BFF]', this)"
+              >
+                <button class="w-4 h-4 rounded-full bg-[#816BFF]"></button>
+              </div>
+
+              <!-- cyan -->
+              <div
+                class="color-option w-6 h-6 rounded-full flex items-center justify-center"
+                onclick="changeThumbnail('cyan', 'border-[#1FCEC9]', this)"
+              >
+                <button class="w-4 h-4 rounded-full bg-[#1FCEC9]"></button>
+              </div>
+              <!-- blue  -->
+              <div
+                class="color-option w-6 h-6 rounded-full flex items-center justify-center"
+                onclick="changeThumbnail('blue', 'border-[#4B97D3]', this)"
+              >
+                <button class="w-4 h-4 rounded-full bg-[#4B97D3]"></button>
+              </div>
+
+              <!-- black -->
+              <div
+                class="color-option w-6 h-6 rounded-full flex items-center justify-center"
+                onclick="changeThumbnail('black', 'border-[#3B4747]', this)"
+              >
+                <button class="w-4 h-4 rounded-full bg-[#3B4747]"></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <p class="font-bold text-gray-800 text-[18px]">Wrist Size</p>
+            <div class="flex space-x-3 mt-2">
+              <!-- S -->
+              <button
+                class="size-option border border-gray-200 px-[18px] py-[8px] rounded text-gray-500"
+                onclick="setSize('S', this)"
+              >
+                <span class="font-bold">S</span>
+                <span>$69</span>
+              </button>
+
+              <!-- M -->
+              <button
+                class="size-option border border-gray-200 px-[18px] py-[8px] rounded text-gray-500"
+                onclick="setSize('M', this)"
+              >
+                <span class="font-bold">M</span>
+                <span>$79</span>
+              </button>
+
+              <!-- L -->
+              <button
+                class="size-option border border-gray-200 px-[18px] py-[8px] rounded text-gray-500"
+                onclick="setSize('L', this)"
+              >
+                <span class="font-bold">L</span>
+                <span>$89</span>
+              </button>
+
+              <!-- XL -->
+              <button
+                class="size-option border border-gray-200 px-[18px] py-[8px] rounded text-gray-500"
+                onclick="setSize('XL', this)"
+              >
+                <span class="font-bold">XL</span>
+                <span>$99</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="flex items-center space-x-4 mt-4">
+            <!-- Quantity Selector -->
+            <div class="flex border rounded overflow-hidden">
+              <button
+                id="decrement"
+                class="w-8 text-gray-500 border-r px-6 py-1 text-xl bg-gray-100 flex items-center justify-center"
+                onclick="updateQuantity(-1)"
+              >
+                &#8722;
+              </button>
+              <input
+                id="quantity"
+                type="text"
+                value="1"
+                class="w-12 text-center border-0 focus:outline-none"
+                readonly
+              />
+              <button
+                id="increment"
+                class="w-8 text-gray-500 border-l px-6 py-1 text-xl bg-gray-100 flex items-center justify-center"
+                onclick="updateQuantity(1)"
+              >
+                &#43;
+              </button>
+            </div>
+
+            <!-- Add to Cart Button -->
+            <button
+              class="bg-[#816BFF] text-white px-6 py-2 rounded font-semibold hover:bg-[#6e5cd7] transition duration-300"
+              onclick="addToCart()"
+            >
+              Add to Cart
+            </button>
+
+            <!-- Wishlist Icon -->
+            <button
+              class="text-[#6576FF] text-4xl hover:text-[#6e5cd7] transition duration-300"
+              onclick="addToWishlist()"
+            >
+              &#9825;
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating Checkout Button -->
+    <div class="w-full flex items-center justify-center">
+      <div
+        id="floatingCheckout"
+        class="font-bold w-max left-72 bg-[#FFBB5A] text-[#364A63] px-4 py-2 rounded-full shadow hidden cursor-pointer"
+        onclick="showCartModal()"
+      >
+        Checkout
+        <span
+          id="cartCount"
+          class="py-[2px] px-2 ml-3 rounded-md bg-white text-[#364A63]"
+          >0</span
+        >
+      </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div
+      id="cartModal"
+      class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
+    >
+      <div class="bg-white rounded-lg shadow-lg w-11/12 max-w-3xl p-6">
+        <!-- Modal Header -->
+        <h2 class="text-[22px] font-bold mb-4 text-[#364A63]">Your Cart</h2>
+
+        <!-- Table Structure -->
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="border-b">
+                <th class="p-2 font-normal text-[#8091A7]">Item</th>
+                <th class="p-2 font-normal text-[#8091A7]">Color</th>
+                <th class="p-2 font-normal text-[#8091A7]">Size</th>
+                <th class="p-2 font-normal text-[#8091A7] text-center">Qnt</th>
+                <th class="p-2 font-normal text-[#8091A7] text-right">Price</th>
+              </tr>
+            </thead>
+            <tbody id="cartItems">
+              <!-- Dynamically added rows will appear here -->
+            </tbody>
+          </table>
+
+          <div class="flex items-center justify-between pt-6">
+            <p class="text-[18px] font-bold">Total</p>
+            <div class="flex items-center gap-10">
+              <p class="text-lg font-semibold">
+                <span id="totalQuantity" class="text-gray-800">0</span>
+              </p>
+              <p class="text-lg font-semibold mt-1">
+                <span id="totalPrice" class="text-gray-800">$0.00</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Total Section -->
+        <div class="flex justify-end items-center mt-6">
+          <div class="space-x-4">
+            <button
+              onclick="closeCartModal()"
+              class="border border-gray-400 px-4 py-2 rounded text-gray-600 hover:bg-gray-100"
+            >
+              Continue Shopping
+            </button>
+            <button
+              class="bg-[#816BFF] text-white px-4 py-2 rounded hover:bg-[#6e5cd7]"
+            >
+              Checkout
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
