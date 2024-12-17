@@ -1,5 +1,5 @@
 # Live Link : https://frontend-test-task-eta.vercel.app/
-- I use both Technology ROW HTML Vanilla Javascript and use React.Js
+- I use both Technology ROW HTML Vanilla Javascript Tailwind CSS and use React.Js with Tailwind CSS 
 - React live link under the value :-
 # Live link React :- https://frontend-test-task-react.vercel.app/
 - With GitHub Repo React :-
